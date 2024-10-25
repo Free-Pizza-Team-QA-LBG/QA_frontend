@@ -9,3 +9,7 @@ Install the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeume
 Run `npm run dev` to host the app on a local development server.
 
 The project uses Next.js with app router ([documentation](https://nextjs.org/docs)).
+
+## Production (VM)
+
+To update the code running on the VM, connect to the instance over SSH. Run `git pull` in `/var/www/QA_frontend` and run `npm run build` to generate production code. Finally, run `pm2 restart qa-frontend` to restart the process.

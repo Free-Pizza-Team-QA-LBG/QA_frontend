@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "types:generate": "openapi-typescript openapi.json -o src/api/strapi.d.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "15.0.1",

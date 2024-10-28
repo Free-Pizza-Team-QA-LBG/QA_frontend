@@ -1,5 +1,4 @@
-// Heroes.js
-const Heroes = ({ title, subtitle, imageUrl, linkUrl }) => {
+const Heroes = ({ title = "QA-LBG", subtitle, imageUrl, linkUrl }) => {
     return (
       <div className="relative h-[92vh] w-full overflow-hidden flex items-center justify-center text-white text-center">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 to-black/70 z-10"></div>
@@ -7,7 +6,9 @@ const Heroes = ({ title, subtitle, imageUrl, linkUrl }) => {
           <source src="/freepizza.mp4" type="video/mp4" />
         </video>
         <div className="relative z-20 max-w-[80%] mx-auto">
-          <h1 className="text-3xl font-playfair font-bold uppercase tracking-wide mb-4">{title}</h1>
+          <h1 className="text-5xl font-playfair font-extrabold uppercase tracking-wide mb-4 shadow-lg">
+            {title}
+          </h1>
           <p className="text-2xl font-roboto font-light mb-8">{subtitle}</p>
           <a 
             href={linkUrl} 

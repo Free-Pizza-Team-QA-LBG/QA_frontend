@@ -47,10 +47,10 @@ function Table() {
                             $2999
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -70,10 +70,10 @@ function Table() {
                             $1999
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -93,10 +93,10 @@ function Table() {
                             $99
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -116,10 +116,10 @@ function Table() {
                             $199
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -139,10 +139,10 @@ function Table() {
                             $2999
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -162,10 +162,10 @@ function Table() {
                             $399
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -185,10 +185,10 @@ function Table() {
                             $699
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -208,10 +208,10 @@ function Table() {
                             $99
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -231,17 +231,17 @@ function Table() {
                             $179
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             AirTag
                         </th>
-                        <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td className="px-6 py-4">
                             Silver
                         </td>
                         <td className="px-6 py-4">
@@ -254,10 +254,10 @@ function Table() {
                             $29
                         </td>
                         <td className="px-6 py-4">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <a href="#" className="bg-yellow-400 text-white py-2 px-4 text-sm rounded hover:bg-yellow-300">Edit</a>
                         </td>
                         <td className="flex items-center px-6 py-4">
-                            <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                            <a href="#" className="bg-red-400 text-white py-2 px-4 text-sm rounded hover:bg-red-300">Remove</a>
                         </td>
                     </tr>
                 </tbody>

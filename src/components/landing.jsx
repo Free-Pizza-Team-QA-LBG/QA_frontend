@@ -8,7 +8,7 @@ const Landing = () => {
         title="Free Pizza Team"
         subtitle="QA-LBG"
         imageUrl="/Hero.jpg" 
-        linkUrl="/second-page"  
+        linkUrl="/employees"  
       />
    
     </div>

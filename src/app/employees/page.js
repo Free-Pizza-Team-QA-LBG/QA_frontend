@@ -10,6 +10,11 @@ export default function TablePage() {
                     Add Employee
                 </a>
             </div>
+            {/*
+            <div className="text-2xl text-gray-900 pt-0 pb-3 ps-5 pe-5">
+                <h1 className="text-gray-900">All Employees</h1>
+            </div>
+            */}
             <div className="ps-5 pe-5">
                 <Table></Table>
             </div>

@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Mason",
+        "email": "john@mason.com",
+        "department": "engineering",
+        "salary": "50000"
+    },
+    {
+        "id": 2,
+        "firstName": "Sarah",
+        "lastName": "Anderson",
+        "email": "sarah@anderson.com",
+        "department": "marketing",
+        "salary": "60000"
+    },
+    {
+        "id": 3,
+        "firstName": "David",
+        "lastName": "Lee",
+        "email": "david@lee.com",
+        "department": "finance",
+        "salary": "55000"
+    },
+    {
+        "id": 4,
+        "firstName": "Emily",
+        "lastName": "Clark",
+        "email": "emily@clark.com",
+        "department": "human resources",
+        "salary": "52000"
+    },
+    {
+        "id": 5,
+        "firstName": "James",
+        "lastName": "Taylor",
+        "email": "james@taylor.com",
+        "department": "engineering",
+        "salary": "58000"
+    },
+    {
+        "id": 6,
+        "firstName": "Olivia",
+        "lastName": "Rodriguez",
+        "email": "olivia@rodriguez.com",
+        "department": "sales",
+        "salary": "62000"
+    },
+    {
+        "id": 7,
+        "firstName": "Michael",
+        "lastName": "Garcia",
+        "email": "michael@garcia.com",
+        "department": "IT",
+        "salary": "57000"
+    },
+    {
+        "id": 8,
+        "firstName": "Sophia",
+        "lastName": "Martinez",
+        "email": "sophia@martinez.com",
+        "department": "design",
+        "salary": "54000"
+    },
+    {
+        "id": 9,
+        "firstName": "Liam",
+        "lastName": "Wilson",
+        "email": "liam@wilson.com",
+        "department": "engineering",
+        "salary": "59000"
+    },
+    {
+        "id": 10,
+        "firstName": "Emma",
+        "lastName": "Lopez",
+        "email": "emma@lopez.com",
+        "department": "product management",
+        "salary": "61000"
+    }
+]

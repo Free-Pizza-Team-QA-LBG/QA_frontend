@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import Table from "../../components/Table"
 import Modal from "@/components/Modal"
+import AddEmployeeForm from "@/components/AddEmployeeForm";
 
 
 
@@ -21,7 +22,7 @@ export default function TablePage() {
                 </a>
             </div>
             <Modal show={showModal} onClose={toggleModal} title="Add Employee">
-                This is where the form will go
+            <AddEmployeeForm />
             </Modal>
             {/*
             <div className="text-2xl text-gray-900 pt-0 pb-3 ps-5 pe-5">

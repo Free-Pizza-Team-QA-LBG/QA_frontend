@@ -9,8 +9,8 @@ export default function AddEmployeeForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-0 rounded-lg shadow-lg m-0 text-black">
-      <div className="mb-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-5 rounded-lg shadow-lg m-0 text-black">
+      <div className="mb-0">
         <label htmlFor="name" className="block text-gray-700">Name</label>
         <input 
           id="name"

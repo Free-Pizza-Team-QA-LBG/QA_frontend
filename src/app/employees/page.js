@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Table from "../../components/Table"
 import Modal from "@/components/Modal"
@@ -12,6 +12,15 @@ export default function TablePage() {
     const toggleModal = () => {
       setShowModal(!showModal);
     };
+
+    const [emplData, setEmplData] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:8080/api/v1/employee/all")
+            .then((res) => res.json())
+            .then((data) => {
+                setEmplData(data.employees);
+            });
+    }, []);
 
     return (
         <div className="w-full pb-10">
@@ -29,7 +38,7 @@ export default function TablePage() {
             </div>
             */}
             <div className="ps-5 pe-5">
-                <Table></Table>
+                <Table data={emplData}></Table>
             </div>
         </div>
     )

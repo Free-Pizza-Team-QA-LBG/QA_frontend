@@ -1,8 +1,9 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Table from "../../components/Table"
 import Modal from "@/components/Modal"
+import Spinner from '@/components/Spinner';
 
 
 
@@ -24,6 +25,22 @@ export default function TablePage() {
         setShowModalDelete({id: id, show: !showModalDelete.show});
       };
 
+
+    const [emplLoading, setEmplLoading] = useState(true);
+    const [emplData, setEmplData] = useState(null);
+    const [emplError, setEmplError] = useState(null);
+    useEffect(() => {
+        fetch("http://localhost:8080/api/v1/employee/all")
+            .then((res) => res.json())
+            .then((data) => {
+                setEmplData(data.employees);
+                setEmplLoading(false);
+            })
+            .catch((err) => {
+                setEmplError(err.message ?? "Error");
+                setEmplLoading(false);
+            });
+    }, []);
 
     return (
         <div className="w-full pb-10">
@@ -47,7 +64,15 @@ export default function TablePage() {
             </div>
             */}
             <div className="ps-5 pe-5">
-                <Table onModalUpdate={toggleModalUpdate} onModalDelete={toggleModalDelete}></Table>
+                {
+                    
+                }
+
+                {
+                    emplLoading ? <Spinner />
+                        : emplError ? <p>{emplError}</p>
+                        : <Table data={emplData} onModalUpdate={toggleModalUpdate} onModalDelete={toggleModalDelete}></Table>
+                }
             </div>
         </div>
     )

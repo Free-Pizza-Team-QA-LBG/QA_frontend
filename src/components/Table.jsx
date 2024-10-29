@@ -1,7 +1,6 @@
 import Tr from "./TableRow"
-import data from "../../fake_data/data"
 
-function Table({onModalUpdate, onModalDelete}) {
+function Table({onModalUpdate, onModalDelete, data }) {
 
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

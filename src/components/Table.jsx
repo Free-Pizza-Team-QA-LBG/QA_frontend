@@ -1,7 +1,7 @@
 import Tr from "./TableRow"
-import data from "../../fake_data/data"
 
-function Table() {
+function Table({onModalUpdate, onModalDelete, data }) {
+
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -32,7 +32,7 @@ function Table() {
                 </thead>
                 <tbody>
                         {
-                            data.map((obj, key) => <Tr {...obj} key={key}/>)
+                            data.map((obj, key) => <Tr {...obj} toggleModelUpdate={onModalUpdate} toggleModelDelete={onModalDelete} key={key}/>)
                         }
                 </tbody>
             </table>

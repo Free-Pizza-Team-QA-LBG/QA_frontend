@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Table from "../../components/Table"
 import Modal from "@/components/Modal"
+import Spinner from '@/components/Spinner';
 
 
 
@@ -13,12 +14,19 @@ export default function TablePage() {
       setShowModal(!showModal);
     };
 
-    const [emplData, setEmplData] = useState([]);
+    const [emplLoading, setEmplLoading] = useState(true);
+    const [emplData, setEmplData] = useState(null);
+    const [emplError, setEmplError] = useState(null);
     useEffect(() => {
         fetch("http://localhost:8080/api/v1/employee/all")
             .then((res) => res.json())
             .then((data) => {
                 setEmplData(data.employees);
+                setEmplLoading(false);
+            })
+            .catch((err) => {
+                setEmplError(err.message ?? "Error");
+                setEmplLoading(false);
             });
     }, []);
 
@@ -38,7 +46,15 @@ export default function TablePage() {
             </div>
             */}
             <div className="ps-5 pe-5">
-                <Table data={emplData}></Table>
+                {
+                    
+                }
+
+                {
+                    emplLoading ? <Spinner />
+                        : emplError ? <p>{emplError}</p>
+                        : <Table data={emplData}></Table>
+                }
             </div>
         </div>
     )

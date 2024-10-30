@@ -6,6 +6,7 @@ import Modal from "@/components/Modal"
 import AddEmployeeForm from "@/components/AddEmployeeForm";
 import Spinner from '@/components/Spinner';
 import UpdateEmployeeForm from "@/components/UpdateEmployeeForm";
+import DeleteEmployeeForm from "@/components/DeleteEmployeeForm"
 
 
 
@@ -52,13 +53,13 @@ export default function TablePage() {
                 </a>
             </div>
             <Modal show={showModal} onClose={toggleModal} title="Add Employee">
-            <AddEmployeeForm />
+                <AddEmployeeForm />
             </Modal>
             <Modal show={showModalUpdate.show} onClose={toggleModalUpdate} title="Update Emplyee">
                 <UpdateEmployeeForm data={showModalUpdate.data}/>
             </Modal>
             <Modal show={showModalDelete.show} onClose={toggleModalDelete} title="Delete Emplyee">
-                Are you sure you want to delete employee {showModalDelete.id}?
+                <DeleteEmployeeForm id={showModalDelete.id} />
             </Modal>
             {/*
             <div className="text-2xl text-gray-900 pt-0 pb-3 ps-5 pe-5">

@@ -1,4 +1,4 @@
-import Tr from "./TableRow"
+import TableRow from "./TableRow";
 
 function Table({onModalUpdate, onModalDelete, data }) {
 
@@ -32,7 +32,7 @@ function Table({onModalUpdate, onModalDelete, data }) {
                 </thead>
                 <tbody>
                         {
-                            data.map((obj, key) => <Tr {...obj} toggleModelUpdate={onModalUpdate} toggleModelDelete={onModalDelete} key={key}/>)
+                            data.map((obj, key) => <TableRow {...obj} toggleModelUpdate={onModalUpdate} toggleModelDelete={onModalDelete} key={key}/>)
                         }
                 </tbody>
             </table>

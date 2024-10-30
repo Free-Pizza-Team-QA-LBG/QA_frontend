@@ -4,7 +4,7 @@ import Modal from "@/components/Modal"
 export default function TableRow({id, firstName, lastName, email, department, salary, toggleModelUpdate, toggleModelDelete}) {
 
     const createModelUpdate = () => {
-        toggleModelUpdate(id)
+        toggleModelUpdate({id: id, firstName: firstName, lastName: lastName, email: email, department: department, salary: salary})
     }
 
     const createModelDelete = () => {

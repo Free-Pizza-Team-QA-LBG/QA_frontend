@@ -5,12 +5,13 @@ import Table from "../../components/Table"
 import Modal from "@/components/Modal"
 import AddEmployeeForm from "@/components/AddEmployeeForm";
 import Spinner from '@/components/Spinner';
+import UpdateEmployeeForm from "@/components/UpdateEmployeeForm";
 
 
 
 export default function TablePage() {
     const [showModal, setShowModal] = useState(false);
-    const [showModalUpdate, setShowModalUpdate] = useState({id: 0, show: false});
+    const [showModalUpdate, setShowModalUpdate] = useState({data: {}, show: false});
     const [showModalDelete, setShowModalDelete] = useState({id: 0, show: false});
 
 
@@ -18,8 +19,8 @@ export default function TablePage() {
       setShowModal(!showModal);
     };
 
-    const toggleModalUpdate = (id) => {
-        setShowModalUpdate({id: id, show: !showModalUpdate.show});
+    const toggleModalUpdate = (da) => {
+        setShowModalUpdate({data: da, show: !showModalUpdate.show});
       };
 
     const toggleModalDelete = (id) => {
@@ -54,7 +55,7 @@ export default function TablePage() {
             <AddEmployeeForm />
             </Modal>
             <Modal show={showModalUpdate.show} onClose={toggleModalUpdate} title="Update Emplyee">
-            This is where the update form will go for employee {showModalUpdate.id}
+                <UpdateEmployeeForm data={showModalUpdate.data}/>
             </Modal>
             <Modal show={showModalDelete.show} onClose={toggleModalDelete} title="Delete Emplyee">
                 Are you sure you want to delete employee {showModalDelete.id}?

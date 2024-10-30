@@ -1,5 +1,5 @@
-import NavBar from "@/components/Navbar";
-import Landing from "@/components/landing";
+import NavBar from "@/components/NavBar";
+import Landing from "@/components/Landing";
 import Panel from "@/components/Panel";
 import Link from "next/link";
 import Footer from "@/components/Footer";

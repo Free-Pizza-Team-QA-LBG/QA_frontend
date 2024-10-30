@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Modal from "@/components/Modal"
 
-export default function Tr({id, firstName, lastName, email, department, salary, toggleModelUpdate, toggleModelDelete}) {
+export default function TableRow({id, firstName, lastName, email, department, salary, toggleModelUpdate, toggleModelDelete}) {
 
     const createModelUpdate = () => {
         toggleModelUpdate(id)

@@ -1,10 +1,10 @@
 import { useForm } from 'react-hook-form';
 
-export default function AddEmployeeForm({data}) {
+export default function UpdateEmployeeForm({data}) {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = data => {
-    console.log({id: data.id, ...data});
+  const onSubmit = dataFromForm => {
+    console.log({id: data.id, ...dataFromForm});
     // Handle form submission here
   };
 

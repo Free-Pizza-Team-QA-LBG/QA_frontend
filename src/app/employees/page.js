@@ -66,10 +66,6 @@ export default function TablePage() {
             */}
             <div className="ps-5 pe-5">
                 {
-                    
-                }
-
-                {
                     emplLoading ? <Spinner />
                         : emplError ? <p>{emplError}</p>
                         : <Table data={emplData} onModalUpdate={toggleModalUpdate} onModalDelete={toggleModalDelete}></Table>

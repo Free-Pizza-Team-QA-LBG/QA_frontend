@@ -2,7 +2,7 @@ import Link from 'next/link'; // Import Link from next/link
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white p-10 mt-10">
+    <footer className="bg-gray-900 text-white p-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>

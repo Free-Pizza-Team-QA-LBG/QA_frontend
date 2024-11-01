@@ -1,69 +1,96 @@
-import { useForm } from 'react-hook-form';
+import React, { useState, useEffect } from 'react';
 
-export default function UpdateEmployeeForm({data}) {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+export default function UpdateEmployeeForm({ data, onUpdateEmplyee }) {
 
-  const onSubmit = dataFromForm => {
-    console.log({id: data.id, ...dataFromForm});
-    // Handle form submission here
+  const [formData, setFormData] = useState({
+    id: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    department: '',
+    salary: ''
+  });
+
+  useEffect(() => {
+    if (data) {
+      setFormData({
+        id: data.id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        department: data.department,
+        salary: data.salary,
+      });
+    }
+  }, [data]);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-5 rounded-lg shadow-lg m-0 text-black">
+    <form onSubmit={onUpdateEmplyee} className="bg-white p-5 rounded-lg shadow-lg m-0 text-black">
+
+      <input type="hidden" id="id" name="id" value={formData.id}/>
+
       <div className="mb-0">
-        <label htmlFor="First name" className="block text-gray-700">Name</label>
+        <label htmlFor="firstName" className="block text-gray-700">First Name</label>
         <input 
-          id="first_name"
-          {...register('first_name', { required: true })}
+          id="firstName"
+          name="firstName" 
           className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-          value={data.firstName}
+          value={formData.firstName} 
+          onChange={handleChange} 
         />
-        {errors.name && <p className="text-red-500 mt-1">This field is required</p>}
       </div>
 
       <div className="mb-0">
-        <label htmlFor="Last name" className="block text-gray-700">Name</label>
+        <label htmlFor="lastName" className="block text-gray-700">Last Name</label>
         <input 
-          id="last_name"
-          {...register('last_name', { required: true })}
+          id="lastName"
+          name="lastName" 
           className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-          value={data.lastName}
+          value={formData.lastName}
+          onChange={handleChange} 
         />
-        {errors.name && <p className="text-red-500 mt-1">This field is required</p>}
       </div>
 
       <div className="mb-4">
         <label htmlFor="email" className="block text-gray-700">Email</label>
         <input 
           id="email"
+          name="email" 
           type="email"
-          {...register('email', { required: true })}
           className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-          value={data.email}
+          value={formData.email} 
+          onChange={handleChange} 
         />
-        {errors.email && <p className="text-red-500 mt-1">This field is required</p>}
       </div>
 
       <div className="mb-4">
-        <label htmlFor="department" className="block text-gray-700">Position</label>
+        <label htmlFor="department" className="block text-gray-700">Department</label>
         <input 
           id="department"
-          {...register('department', { required: true })}
+          name="department" 
           className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-          value={data.department}
+          value={formData.department}
+          onChange={handleChange} 
         />
-        {errors.position && <p className="text-red-500 mt-1">This field is required</p>}
       </div>
 
       <div className="mb-4">
-        <label htmlFor="salary" className="block text-gray-700">Position</label>
+        <label htmlFor="salary" className="block text-gray-700">Salary</label>
         <input 
           id="salary"
-          {...register('salary', { required: true })}
+          name="salary"
           className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-          value={data.salary}
+          value={formData.salary} 
+          onChange={handleChange} 
         />
-        {errors.position && <p className="text-red-500 mt-1">This field is required</p>}
       </div>
 
       <div className="flex justify-end">

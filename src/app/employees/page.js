@@ -9,7 +9,6 @@ import UpdateEmployeeForm from "@/components/UpdateEmployeeForm";
 import DeleteEmployeeForm from "@/components/DeleteEmployeeForm"
 
 
-
 export default function TablePage() {
     const [showModalAdd, setShowModalAdd] = useState(false);
     const [showModalUpdate, setShowModalUpdate] = useState({data: {}, show: false});
@@ -70,6 +69,51 @@ export default function TablePage() {
             });
     };
 
+    const updateEmployee = e => {
+        e.preventDefault();
+        
+        const id = e.target[0].value;
+        const firstName = e.target[1].value;
+        const lastName = e.target[2].value;
+        const email = e.target[3].value;
+        const department = e.target[4].value;
+        const salary = e.target[5].value;
+
+        console.log(department)
+        console.log(`http://localhost:8080/api/v1/employee/${id}`)
+
+        fetch(`http://localhost:8080/api/v1/employee/${id}`, {
+            method: "PATCH",
+            body: JSON.stringify({
+                firstName,
+                lastName,
+                email,
+                department,
+                salary,
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        })
+            .then((res) => res.json())
+            .then((json) => {
+                const index = emplData.findIndex(employee => employee.id == id);
+
+                if (index !== -1) {
+                    emplData[index] = json.data; // Replace the object at the found index
+                  } else {
+                    console.log('Employee not found');
+                  }
+
+                toggleModalUpdate()
+            })
+            .catch((err) => {
+                setEmplError(err.message ?? "Error");
+                setEmplLoading(false);
+            });
+    };
+
     async function deleteEmployee(id) {
         console.log(`http://localhost:8080/api/v1/employee/${id}`)
         const response = await fetch(`http://localhost:8080/api/v1/employee/${id}`, {
@@ -103,7 +147,7 @@ export default function TablePage() {
                 <AddEmployeeForm onAddSubmit={addEmployee} />
             </Modal>
             <Modal show={showModalUpdate.show} onClose={toggleModalUpdate} title="Update Emplyee">
-                <UpdateEmployeeForm data={showModalUpdate.data}/>
+                <UpdateEmployeeForm data={showModalUpdate.data} onUpdateEmplyee={updateEmployee}/>
             </Modal>
             <Modal show={showModalDelete.show} onClose={toggleModalDelete} title="Delete Emplyee">
                 <DeleteEmployeeForm id={showModalDelete.id} onClickDelete={deleteEmployee} />

@@ -101,7 +101,7 @@ export default function TablePage() {
                 const index = emplData.findIndex(employee => employee.id == id);
 
                 if (index !== -1) {
-                    emplData[index] = json.data; // Replace the object at the found index
+                    emplData[index] = json.data;
                   } else {
                     console.log('Employee not found');
                   }

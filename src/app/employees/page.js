@@ -45,6 +45,15 @@ export default function TablePage() {
             });
     }, []);
 
+    async function deleteEmployee(id) {
+        console.log(`http://localhost:8080/api/v1/employee/${id}`)
+        const response = await fetch(`http://localhost:8080/api/v1/employee/${id}`, {
+            method: 'DELETE',
+                });
+                setEmplData(emplData.filter(employee => employee.id !== id))
+                toggleModalDelete(-1)
+            }
+
     return (
         <div className="w-full pb-10">
             <div className="pt-10 pb-10 ps-5 pe-5">
@@ -59,7 +68,7 @@ export default function TablePage() {
                 <UpdateEmployeeForm data={showModalUpdate.data}/>
             </Modal>
             <Modal show={showModalDelete.show} onClose={toggleModalDelete} title="Delete Emplyee">
-                <DeleteEmployeeForm id={showModalDelete.id} />
+                <DeleteEmployeeForm id={showModalDelete.id} onClickDelete={deleteEmployee} />
             </Modal>
             {/*
             <div className="text-2xl text-gray-900 pt-0 pb-3 ps-5 pe-5">

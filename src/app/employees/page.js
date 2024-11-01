@@ -35,8 +35,8 @@ export default function TablePage() {
     useEffect(() => {
         fetch("http://localhost:8080/api/v1/employee/all")
             .then((res) => res.json())
-            .then((data) => {
-                setEmplData(data.employees);
+            .then((json) => {
+                setEmplData(json.data);
                 setEmplLoading(false);
             })
             .catch((err) => {

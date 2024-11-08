@@ -32,7 +32,7 @@ export default function TablePage() {
     }, [backendIP]);
 
     return (
-        <div className="w-full pb-10">
+        <div className="w-full pb-10 pt-10">
             {/*
             <div className="text-2xl text-gray-900 pt-0 pb-3 ps-5 pe-5">
                 <h1 className="text-gray-900">All Employees</h1>

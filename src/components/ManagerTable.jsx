@@ -26,4 +26,4 @@ function ManagerTable({ data }) {
     );
     }
     
-export default Table;
+export default ManagerTable;

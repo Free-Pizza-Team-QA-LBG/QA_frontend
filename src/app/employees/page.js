@@ -60,7 +60,9 @@ export default function TablePage() {
             .then((json) => {
                 console.log(json);
 
-                setEmplData([...emplData, json.data])
+                if (Object.keys(json).length > 0) {
+                    setEmplData([...emplData, json.data])
+                }
 
                 toggleModalAdd()
             })

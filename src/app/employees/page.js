@@ -60,7 +60,7 @@ export default function TablePage() {
             .then((json) => {
                 console.log(json);
 
-                if (json) {
+                if (Object.keys(json).length === 0) {
                     setEmplData([...emplData, json.data])
                 }
 

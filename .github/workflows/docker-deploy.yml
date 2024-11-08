@@ -1,0 +1,77 @@
+name: Next.js CI with Docker Deployment
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      TIMESTAMP: ${{ github.run_id }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Build Next.js application
+      - name: Build Next.js
+        run: npm run build
+
+      # Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # Build and tag Docker image
+      - name: Build Docker image
+        run: |
+          docker build . --file Dockerfile --tag freepizza2024/qa-frontend:latest
+          docker tag freepizza2024/qa-frontend:latest freepizza2024/qa-frontend:${{ env.TIMESTAMP }}
+
+      # Push Docker image to Docker Hub
+      - name: Push Docker image
+        run: |
+          docker push freepizza2024/qa-frontend:latest
+          docker push freepizza2024/qa-frontend:${{ env.TIMESTAMP }}
+
+      # Authenticate to Google Cloud
+      - name: Set up Google Cloud credentials
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_JSON }}
+
+      - name: Set up SSH key for GCP
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GCP_VM_KEY }}" > ~/.ssh/gradc2.delegate8
+          chmod 600 ~/.ssh/gradc2.delegate8
+          echo "${{ secrets.GCP_VM_KEY_PUB }}" > ~/.ssh/gradc2.delegate8.pub
+
+      # Deploy to GCP VM
+      - name: Deploy to GCP VM using SSH
+        run: |
+          gcloud compute ssh free-pizza-frontend \
+            --project lbg-mea-grad-programme-c2 \
+            --zone europe-west2-a \
+            --ssh-key-file ~/.ssh/gradc2.delegate8 \
+            --command "
+              # Stop any running container
+              sudo docker ps -q --filter 'ancestor=freepizza2024/qa-frontend:latest' | xargs -r sudo docker stop && \
+              sudo docker ps -aq --filter 'ancestor=freepizza2024/qa-frontend:latest' | xargs -r sudo docker rm && \
+              # Pull the latest image and run a new container
+              sudo docker pull freepizza2024/qa-frontend:latest && \
+              sudo docker run --env-file /lib/free-pizza/env.list -d -p 3000:3000 freepizza2024/qa-frontend:latest"

@@ -1,5 +1,10 @@
 FROM node:18-alpine AS base
 
+# Set backend environment variable
+
+ARG NEXT_PUBLIC_BACKEND_IP
+ENV NEXT_PUBLIC_BACKEND_IP=${NEXT_PUBLIC_BACKEND_IP}
+
 # Install dependencies
 FROM base AS deps
 # https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine

@@ -39,7 +39,10 @@ jobs:
       # Build and tag Docker image
       - name: Build Docker image
         run: |
-          docker build . --file Dockerfile --tag freepizza2024/qa-frontend:latest
+          docker build . \
+            --file Dockerfile \
+            --tag freepizza2024/qa-frontend:latest \
+            --build-arg NEXT_PUBLIC_BACKEND_IP=${{ secrets.NEXT_PUBLIC_BACKEND_IP }}
           docker tag freepizza2024/qa-frontend:latest freepizza2024/qa-frontend:${{ env.TIMESTAMP }}
 
       # Push Docker image to Docker Hub
@@ -74,4 +77,7 @@ jobs:
               sudo docker ps -aq --filter 'ancestor=freepizza2024/qa-frontend:latest' | xargs -r sudo docker rm && \
               # Pull the latest image and run a new container
               sudo docker pull freepizza2024/qa-frontend:latest && \
-              sudo docker run --env-file /lib/free-pizza/env.list -d -p 3000:3000 freepizza2024/qa-frontend:latest"
+              sudo docker run \
+                --env NEXT_PUBLIC_BACKEND_IP=${{ secrets.NEXT_PUBLIC_BACKEND_IP }} \
+                --env-file /lib/free-pizza/env.list \
+                -d -p 3000:3000 freepizza2024/qa-frontend:latest"

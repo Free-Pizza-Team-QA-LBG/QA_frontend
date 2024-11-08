@@ -39,7 +39,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
-public/javascript.js
-public/styles.css
-public/test.html

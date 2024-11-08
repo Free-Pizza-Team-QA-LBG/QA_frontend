@@ -135,7 +135,7 @@ export default function TablePage() {
                 setEmplError(err.message ?? "Error");
                 setEmplLoading(false);
             });
-    }, []);
+    }, [backendIP]);
 
     return (
         <div className="w-full pb-10">

@@ -42,7 +42,7 @@ export default function TablePage() {
         const department = e.target[3].value;
         const salary = e.target[4].value;
 
-        fetch(`http://${backendIP}:8080/api/v1/employee`, {
+        fetch(`http://${backendIP}/api/v1/employee`, {
             method: "POST",
             body: JSON.stringify({
                 firstName,
@@ -81,9 +81,9 @@ export default function TablePage() {
         const salary = e.target[5].value;
 
         console.log(department)
-        console.log(`http://${backendIP}:8080/api/v1/employee/${id}`)
+        console.log(`http://${backendIP}/api/v1/employee/${id}`)
 
-        fetch(`http://${backendIP}:8080/api/v1/employee/${id}`, {
+        fetch(`http://${backendIP}/api/v1/employee/${id}`, {
             method: "PATCH",
             body: JSON.stringify({
                 firstName,
@@ -116,8 +116,8 @@ export default function TablePage() {
     };
 
     async function deleteEmployee(id) {
-        console.log(`http://${backendIP}:8080/api/v1/employee/${id}`)
-        const response = await fetch(`http://${backendIP}:8080/api/v1/employee/${id}`, {
+        console.log(`http://${backendIP}/api/v1/employee/${id}`)
+        const response = await fetch(`http://${backendIP}/api/v1/employee/${id}`, {
             method: 'DELETE',
                 });
                 setEmplData(emplData.filter(employee => employee.id !== id))
@@ -125,7 +125,7 @@ export default function TablePage() {
             }
     
     useEffect(() => {
-        fetch(`http://${backendIP}:8080/api/v1/employee/all`)
+        fetch(`http://${backendIP}/api/v1/employee/all`)
             .then((res) => res.json())
             .then((json) => {
                 setEmplData(json.data);

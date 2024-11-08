@@ -19,7 +19,7 @@ const Heroes = ({ title = "QA-LBG", subtitle, imageUrl, linkUrl, managersLink })
           </a>
           </div>
           <a 
-            href={linkUrl} 
+            href={managersLink} 
             className="bg-yellow-400 text-black py-4 px-8 text-lg font-semibold uppercase rounded-full transition-colors duration-300 hover:bg-yellow-300"
           >
             Managers
